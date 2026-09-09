@@ -5,11 +5,11 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F6CE727C-6A85-4A1D-BED7-40F18E75B0A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetDrManhatan", "src\DotNetDrManhatan\DotNetDrManhatan.csproj", "{061A0D5F-F2A3-42AE-8E4C-F6C19148B4E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetDrManhattan", "src\DotNetDrManhattan\DotNetDrManhattan.csproj", "{061A0D5F-F2A3-42AE-8E4C-F6C19148B4E5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BE0C8607-09C8-471B-B365-12589E2E5582}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetDrManhatan.Validation", "tests\DotNetDrManhatan.Validation\DotNetDrManhatan.Validation.csproj", "{5DB08B50-B739-4B8A-A60C-B33DDE644268}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetDrManhattan.Validation", "tests\DotNetDrManhattan.Validation\DotNetDrManhattan.Validation.csproj", "{5DB08B50-B739-4B8A-A60C-B33DDE644268}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

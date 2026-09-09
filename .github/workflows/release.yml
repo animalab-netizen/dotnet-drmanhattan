@@ -26,10 +26,10 @@ jobs:
         run: dotnet build --no-restore
 
       - name: Run validation
-        run: dotnet run --project tests/DotNetDrManhatan.Validation/DotNetDrManhatan.Validation.csproj --no-build
+        run: dotnet run --project tests/DotNetDrManhattan.Validation/DotNetDrManhattan.Validation.csproj --no-build
 
       - name: Pack
-        run: dotnet pack src/DotNetDrManhatan/DotNetDrManhatan.csproj --no-build -o ./artifacts
+        run: dotnet pack src/DotNetDrManhattan/DotNetDrManhattan.csproj --no-build -o ./artifacts
 
   publish:
     runs-on: ubuntu-latest
@@ -48,7 +48,7 @@ jobs:
           dotnet-version: "7.0.x"
 
       - name: Pack
-        run: dotnet pack src/DotNetDrManhatan/DotNetDrManhatan.csproj -c Release -o ./artifacts
+        run: dotnet pack src/DotNetDrManhattan/DotNetDrManhattan.csproj -c Release -o ./artifacts
 
       - name: Publish to NuGet
         if: ${{ secrets.NUGET_API_KEY != '' }}

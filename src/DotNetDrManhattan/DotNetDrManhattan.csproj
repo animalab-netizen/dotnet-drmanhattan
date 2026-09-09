@@ -5,17 +5,17 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <PackageId>dotnet-drmanhatan</PackageId>
-    <Version>0.1.1</Version>
+    <PackageId>dotnet-drmanhattan</PackageId>
+    <Version>0.1.2</Version>
     <Authors>ÂnimaLab</Authors>
     <Company>ÂnimaLab</Company>
     <Description>Observable event runtime for .NET applications without telemetry vendor coupling.</Description>
-    <PackageTags>drmanhatan;dotnet;observability;telemetry;events;websocket</PackageTags>
+    <PackageTags>drmanhattan;dotnet;observability;telemetry;events;websocket</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <RepositoryUrl>https://github.com/animalab-netizen/dotnet-drmanhatan</RepositoryUrl>
+    <RepositoryUrl>https://github.com/animalab-netizen/dotnet-drmanhattan</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageProjectUrl>https://github.com/animalab-netizen/dotnet-drmanhatan</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/animalab-netizen/dotnet-drmanhattan</PackageProjectUrl>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
   </PropertyGroup>
 

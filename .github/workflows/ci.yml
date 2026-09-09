@@ -27,4 +27,4 @@ jobs:
         run: dotnet build --no-restore
 
       - name: Run validation
-        run: dotnet run --project tests/DotNetDrManhatan.Validation/DotNetDrManhatan.Validation.csproj --no-build
+        run: dotnet run --project tests/DotNetDrManhattan.Validation/DotNetDrManhattan.Validation.csproj --no-build

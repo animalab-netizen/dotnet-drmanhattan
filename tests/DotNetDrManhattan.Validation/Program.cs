@@ -1,4 +1,4 @@
-using DotNetDrManhatan;
+using DotNetDrManhattan;
 
 var failures = new List<string>();
 
@@ -40,7 +40,7 @@ void Check(bool condition, string message)
     var bus = new DefaultEventBus();
     bus.Subscribe(new DelegateEventObserver(recorded.Add));
 
-    var tracker = new DrManhatan(bus, new EventFactory(new CommonMetadata("1.0.0"), null));
+    var tracker = new DrManhattan(bus, new EventFactory(new CommonMetadata("1.0.0"), null));
     var endpoint = new ProtocolEndpoint("chat", "wss://socket.example.com", "rooms/general");
 
     tracker.Publish(tracker.ProtocolSession(Protocol.WebSocket, endpoint, "ws-42") is { } session
@@ -59,7 +59,7 @@ void Check(bool condition, string message)
         new ProtocolFailure("WS_TIMEOUT", "transport", "heartbeat timeout", true),
         "ws-42");
 
-    Check(recorded.Count == 3, "drmanhatan publish count mismatch");
+    Check(recorded.Count == 3, "drmanhattan publish count mismatch");
     Check(recorded[1].Attributes["message.direction"] == "outbound", "outbound protocol message mismatch");
     Check(recorded[2].Attributes["error.retryable"] == "true", "protocol failure retryable mismatch");
 }
@@ -68,7 +68,7 @@ void Check(bool condition, string message)
     var recorded = new List<Event>();
     var bus = new DefaultEventBus();
     bus.Subscribe(new DelegateEventObserver(recorded.Add));
-    var tracker = new DrManhatan(bus, new EventFactory());
+    var tracker = new DrManhattan(bus, new EventFactory());
     var session = tracker.ProtocolSession(Protocol.Mqtt, new ProtocolEndpoint("broker"), "mqtt-9");
 
     session.HeartbeatSent("hb-out-1");
@@ -98,4 +98,4 @@ if (failures.Count > 0)
     Environment.Exit(1);
 }
 
-Console.WriteLine("dotnet-drmanhatan validation passed");
+Console.WriteLine("dotnet-drmanhattan validation passed");

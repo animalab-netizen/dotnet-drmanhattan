@@ -1,4 +1,4 @@
-namespace DotNetDrManhatan;
+namespace DotNetDrManhattan;
 
 public sealed record Event(string Name, IReadOnlyDictionary<string, string>? Attributes = null)
 {
@@ -504,12 +504,12 @@ public sealed class EventFactory
     }
 }
 
-public sealed class DrManhatan
+public sealed class DrManhattan
 {
     private readonly IEventBus _bus;
     private readonly EventFactory _factory;
 
-    public DrManhatan(IEventBus bus, EventFactory factory)
+    public DrManhattan(IEventBus bus, EventFactory factory)
     {
         _bus = bus;
         _factory = factory;
@@ -552,28 +552,28 @@ public sealed class DrManhatan
 
 public class ProtocolSessionTracker
 {
-    private readonly DrManhatan _drManhatan;
+    private readonly DrManhattan _drManhattan;
     private readonly Protocol _protocol;
 
     public ProtocolEndpoint Endpoint { get; }
     public string? SessionId { get; }
 
-    public ProtocolSessionTracker(DrManhatan drManhatan, Protocol protocol, ProtocolEndpoint endpoint, string? sessionId = null)
+    public ProtocolSessionTracker(DrManhattan drManhattan, Protocol protocol, ProtocolEndpoint endpoint, string? sessionId = null)
     {
-        _drManhatan = drManhatan;
+        _drManhattan = drManhattan;
         _protocol = protocol;
         Endpoint = endpoint;
         SessionId = sessionId;
     }
 
     public void ConnectionStarted(IReadOnlyDictionary<string, string>? attributes = null) =>
-        _drManhatan.ProtocolConnectionStarted(_protocol, Endpoint, SessionId, attributes);
+        _drManhattan.ProtocolConnectionStarted(_protocol, Endpoint, SessionId, attributes);
 
     public void ConnectionOpened(IReadOnlyDictionary<string, string>? attributes = null) =>
-        _drManhatan.ProtocolConnectionOpened(_protocol, Endpoint, SessionId, attributes);
+        _drManhattan.ProtocolConnectionOpened(_protocol, Endpoint, SessionId, attributes);
 
     public void Message(ProtocolMessage message) =>
-        _drManhatan.ProtocolMessage(_protocol, Endpoint, message, SessionId);
+        _drManhattan.ProtocolMessage(_protocol, Endpoint, message, SessionId);
 
     public void InboundMessage(string? operation = null, string? type = null, string? correlationId = null, long? sizeBytes = null, IReadOnlyDictionary<string, string>? attributes = null) =>
         Message(new ProtocolMessage(ProtocolMessageDirection.Inbound, operation, type, correlationId, sizeBytes, attributes));
@@ -588,19 +588,19 @@ public class ProtocolSessionTracker
         InboundMessage("heartbeat", "heartbeat", correlationId, null, attributes);
 
     public void ReconnectScheduled(int attempt, long delayMillis, string? reason = null, IReadOnlyDictionary<string, string>? attributes = null) =>
-        _drManhatan.ProtocolReconnectScheduled(_protocol, Endpoint, attempt, delayMillis, reason, SessionId, attributes);
+        _drManhattan.ProtocolReconnectScheduled(_protocol, Endpoint, attempt, delayMillis, reason, SessionId, attributes);
 
     public void Failure(ProtocolFailure failure) =>
-        _drManhatan.ProtocolFailure(_protocol, Endpoint, failure, SessionId);
+        _drManhattan.ProtocolFailure(_protocol, Endpoint, failure, SessionId);
 
     public void Closed(ProtocolClose? close = null) =>
-        _drManhatan.ProtocolConnectionClosed(_protocol, Endpoint, close, SessionId);
+        _drManhattan.ProtocolConnectionClosed(_protocol, Endpoint, close, SessionId);
 }
 
 public sealed class WebSocketSessionTracker : ProtocolSessionTracker
 {
-    public WebSocketSessionTracker(DrManhatan drManhatan, ProtocolEndpoint endpoint, string? sessionId = null)
-        : base(drManhatan, Protocol.WebSocket, endpoint, sessionId)
+    public WebSocketSessionTracker(DrManhattan drManhattan, ProtocolEndpoint endpoint, string? sessionId = null)
+        : base(drManhattan, Protocol.WebSocket, endpoint, sessionId)
     {
     }
 }
