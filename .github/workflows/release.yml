@@ -29,7 +29,7 @@ jobs:
         run: dotnet run --project tests/DotNetDrManhattan.Validation/DotNetDrManhattan.Validation.csproj --no-build
 
       - name: Pack
-        run: dotnet pack src/DotNetDrManhattan/DotNetDrManhattan.csproj --no-build -o ./artifacts
+        run: dotnet pack src/DotNetDrManhattan/DotNetDrManhattan.csproj -c Release -o ./artifacts
 
   publish:
     runs-on: ubuntu-latest
